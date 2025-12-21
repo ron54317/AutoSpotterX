@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoSpotterX - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
     <style>
+        :root {
+            --primary: #BB86FC;
+            --accent: #03DAC5;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.7;
             margin: 0;
             padding: 0;
@@ -26,8 +33,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: #050408;
-            border-bottom: 1px solid #222;
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -56,23 +64,24 @@
         }
 
         .logo-img {
-            height: 40px;
+            height: 48px;
             width: auto;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
         .logo-text {
+            font-family: 'Outfit', sans-serif;
             font-weight: 700;
             font-size: 1.4rem;
-            background: linear-gradient(135deg, #BB86FC, #03DAC5);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: #BB86FC;
+            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 24px;
         }
 
         .nav-links a {
@@ -84,12 +93,12 @@
         }
 
         .nav-links a:hover {
-            color: #BB86FC;
+            color: var(--primary);
         }
 
         /* Global link style so all links use the same accent color */
         a {
-            color: #BB86FC;
+            color: var(--primary);
             transition: opacity 0.2s;
         }
 
