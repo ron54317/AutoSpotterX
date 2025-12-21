@@ -121,6 +121,38 @@
             border-radius: 0;
             box-shadow: none;
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                /* Reset mask for mobile to avoid cutoff Issues */
+                -webkit-mask-image: none;
+                mask-image: none;
+                background: rgba(5, 4, 8, 0.95);
+            }
+
+            .nav-links {
+                gap: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 30px;
+            }
+        }
     </style>
 </head>
 
@@ -284,7 +316,8 @@
                     href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a>.</p>
 
             <h2>9. User Feedback</h2>
-            <p>Any feedback, suggestions, or ideas you submit to AutoSpotterX are provided voluntarily and may be used by us for any purpose, without compensation or obligation to you.</p>
+            <p>Any feedback, suggestions, or ideas you submit to AutoSpotterX are provided voluntarily and may be used
+                by us for any purpose, without compensation or obligation to you.</p>
 
             <h2>10. Third-Party Services</h2>
             <p>The App uses third-party services (cloud storage, AI, etc.) that have their own terms. We're not

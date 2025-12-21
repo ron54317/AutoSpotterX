@@ -352,6 +352,8 @@ header {
 .btn-group {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    /* Ensure buttons stack if needed */
     gap: 1.5rem;
     margin-top: 2.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -408,28 +410,45 @@ header {
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-.feature-visual {
-    order: 2;
-    width: 100%;
-    padding: 0 1rem;
-}
+    .hero h2 {
+        font-size: 2.4rem;
+    }
 
-.phone-frame {
-    transform: none !important;
-    /* Remove rotation on mobile for cleaner look */
-    max-width: 280px;
-    margin: 0 auto;
-}
+    .nav-links {
+        gap: 16px;
+    }
 
-.hero h2 {
-    font-size: 2.8rem;
-}
+    .nav-links a {
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
     header {
-        padding: 1rem;
+        padding: 0.8rem 1.2rem;
+        flex-direction: column;
+        gap: 0.8rem;
+        background: rgba(255, 255, 255, 0.95);
+        /* More solid on mobile */
+    }
+
+    @media (prefers-color-scheme: dark) {
+        header {
+            background: rgba(18, 18, 18, 0.95);
+        }
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .logo-text {
@@ -437,27 +456,66 @@ header {
     }
 
     .logo-img {
-        height: 36px;
+        height: 32px;
+    }
+
+    .hero {
+        padding: 4rem 1.2rem 2rem;
     }
 
     .hero h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        line-height: 1.2;
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
     }
 
-    .feature-text h3 {
-        font-size: 1.8rem;
+    .feature-card {
+        padding: 1.5rem 1.2rem;
     }
 
-    .privacy-section {
-        padding: 4rem 1.5rem;
+    .feature-card h3 {
+        font-size: 1.25rem;
     }
 
-    .privacy-icon {
-        font-size: 2.5rem;
+    .feature-card p {
+        font-size: 0.95rem;
+    }
+
+    .privacy-banner {
+        padding: 2rem 1.2rem;
+        margin: 2rem 1rem;
+        border-radius: var(--radius-md);
+    }
+
+    .privacy-banner h2 {
+        font-size: 1.3rem;
+    }
+
+    .privacy-banner p {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        padding: 4rem 1.2rem 3rem;
+    }
+
+    .footer h3 {
+        font-size: 1.5rem;
+    }
+
+    .store-badge img {
+        height: 54px;
+        /* Slightly smaller for mobile */
+    }
+
+    .btn-group {
+        gap: 1.2rem;
+        margin-top: 2rem;
+        padding-top: 1.2rem;
     }
 }
 
