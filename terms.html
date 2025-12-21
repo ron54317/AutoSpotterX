@@ -8,123 +8,141 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f5f6fa;
+            color: #ffffff;
+            background-color: #050408;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #050408;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            /* Super-smooth fading blur */
+            -webkit-mask-image: linear-gradient(to bottom,
+                    black 0%,
+                    black 50%,
+                    rgba(0, 0, 0, 0.9) 65%,
+                    rgba(0, 0, 0, 0.6) 80%,
+                    rgba(0, 0, 0, 0.3) 90%,
+                    transparent 100%);
+            mask-image: linear-gradient(to bottom,
+                    black 0%,
+                    black 50%,
+                    rgba(0, 0, 0, 0.9) 65%,
+                    rgba(0, 0, 0, 0.6) 80%,
+                    rgba(0, 0, 0, 0.3) 90%,
+                    transparent 100%);
         }
 
-        h1 {
-            margin: 0;
-            padding: 20px 0;
-        }
-
-        h2 {
-            color: #2c3e50;
-            margin-top: 30px;
-        }
-
-        .content {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .navigation {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .navigation a {
-            color: #1e88ff;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            margin: 0 10px;
         }
 
-        .navigation a:hover {
-            text-decoration: underline;
+        .logo-img {
+            height: 40px;
+            width: auto;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #BB86FC, #03DAC5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #BB86FC;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #eeeeee;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #BB86FC;
         }
 
         /* Global link style so all links use the same accent color */
         a {
-            color: #1e88ff;
+            color: #BB86FC;
+            transition: opacity 0.2s;
         }
 
         a:hover {
-            text-decoration: underline;
+            opacity: 0.8;
+            text-decoration: none;
         }
 
-        /* System dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #000000;
-                color: #f5f5f5;
-            }
+        p,
+        li {
+            color: #ffffff;
+        }
 
-            .content {
-                background: #101010;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-            }
+        em {
+            color: #888;
+        }
 
-            header {
-                background-color: #000000;
-                color: #f5f5f5;
-                border-bottom: 1px solid #222222;
-            }
+        h2 {
+            color: #ffffff;
+            margin-top: 40px;
+            font-size: 1.8rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+        }
 
-            h2 {
-                color: #ffffff;
-            }
-
-            .navigation a {
-                color: #64b5ff;
-            }
-
-            .navigation a:hover {
-                text-decoration: underline;
-            }
-
-            a {
-                color: #64b5ff;
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
+        .content {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>AutoSpotterX Terms of Service</h1>
+        <a href="index.html" class="logo-container">
+            <img src="app_screenshots/ChatGPT%20Image%20Apr%2012,%202025,%2011_33_51%20PM.png" alt="AutoSpotterX Logo"
+                class="logo-img">
+            <span class="logo-text">AutoSpotterX</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
     </header>
 
     <div class="container">
-        <div class="navigation">
-            <a href="index.html">Home</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="privacy.html">Privacy Policy</a>
-        </div>
 
         <div class="content">
             <h2>AutoSpotterX – Terms of Service</h2>
-            <p><em>Last Updated: December 2, 2025</em></p>
+            <p><em>Last Updated: December 21, 2025</em></p>
 
             <h2>1. Acceptance of Terms</h2>
             <p>By using AutoSpotterX ("the App"), you're agreeing to these Terms of Service. If you don't agree, please
@@ -137,14 +155,16 @@
                 private mapping for your own spots, and gamification features (AutoXP points and leaderboards).</p>
 
             <p><strong>AI Identification:</strong> Optional AI-powered car identification. Each account receives one
-                free use. Additional uses may require payment in the future. AI results may be inaccurate—do not rely on
+                free use. We track your usage count to enforce free usage limits. Additional uses may require payment in
+                the future. AI results may be inaccurate—do not rely on
                 them for legal or commercial purposes.</p>
 
             <p>We reserve the right to modify, suspend, or discontinue any feature at any time without notice. The
                 Service is provided "as is" without guarantees of availability or error-free operation.</p>
 
             <h2>3. User Accounts</h2>
-            <p>You must be at least 16 years old (age may vary by local law) to use the App. Users under the minimum age are not allowed to create an account.</p>
+            <p>You must be at least 16 years old (age may vary by local law) to use the App. Users under the minimum age
+                are not allowed to create an account.</p>
 
             <p>Please provide accurate information when creating your account and keep it secure. You're responsible for
                 all activity under your account.
@@ -154,12 +174,13 @@
                 sure your content is legal, does not infringe on anyone else's rights (including privacy and copyright),
                 and complies with all applicable laws.</p>
 
-            <p>You own your content. By uploading, you grant us permission to store, display, and process your content
-                to operate the App. If you share content publicly (on the public feed), we may also use it for
-                promotional purposes. To opt out of promotional use, disable public sharing in your privacy settings
-                (Settings → Privacy → "Don't Upload to Feed & Country Spots") or hide individual cars when uploading.
-                You retain all
-                copyright and ownership.</p>
+            <p>You own your content. By uploading content to the App, you grant AutoSpotterX a non-exclusive, worldwide,
+                royalty-free, revocable license to store, display, and process your content to operate, improve, and
+                promote the App.
+                If you share content publicly, it may be used in AutoSpotterX-related promotional materials. You can opt
+                out at any time by disabling public sharing in your privacy settings (Settings → Privacy → “Don’t Upload
+                to Feed & Country Spots”) or hiding individual cars.
+                You retain all copyright and ownership of your content.</p>
             <p>We do not actively monitor all content and are not responsible for content posted by users. However, we
                 reserve the right (but are not obligated) to review, remove, or report any content that we believe
                 violates these Terms or any applicable law.</p>
@@ -169,12 +190,16 @@
                 <li><strong>Original photos only:</strong> Upload only photos you personally took. No internet
                     downloads, screenshots, stock photos, AI-generated images, or content taken from other apps or
                     websites.</li>
-                <li><strong>Real Cars only:</strong> Upload only real cars spotted in the real world. No toy cars, video
-                    game screenshots, dealership photos, or museum brochures.</li>
-                <li><strong>Blur license plates and faces:</strong> Ensure all license plates and faces are properly
-                    blurred before upload. You are responsible for any privacy violations.</li>
+                <li><strong>Real Cars only:</strong> Upload only real cars spotted in the real world. No toy cars or
+                    video
+                    game screenshots.</li>
+                <li><strong>Blur license plates and faces:</strong> The App attempts to automatically blur license
+                    plates
+                    and faces, but it may not be perfect. You must review your photos before upload and blur any visible
+                    license plates or faces yourself (use the in-app Blur tool). You are responsible for any privacy
+                    violations.</li>
                 <li><strong>No personal or sensitive data:</strong> Avoid capturing people, home addresses, or other
-                    personal identifiers. If present, they must be blurred.</li>
+                    personal identifiers.</li>
                 <li><strong>Respect private property:</strong> Do not enter private areas or capture photos through
                     gates/garages where there is an expectation of privacy.</li>
                 <li><strong>Clear visibility:</strong> Photos must clearly show the car. Extremely blurry, dark, or
@@ -183,8 +208,9 @@
                     people or misrepresent ownership or authorship of photos.</li>
             </ul>
 
-            <p><strong>Privacy Protection:</strong> AutoSpotterX does not guarantee automatic blurring or privacy
-                protection. You are solely responsible for any privacy violations.</p>
+            <p><strong>Privacy Protection:</strong> AutoSpotterX may automatically blur license plates and faces, but
+                automatic detection may not be perfect. You are responsible for reviewing your photos before uploading
+                and using the in-app Blur tool to blur any remaining sensitive information.</p>
 
             <p><strong>Content Visibility:</strong> Common cars are not accepted. Uncommon cars are stored privately.
                 Only RARE+ cars can appear in the feed and country spots if your privacy settings allow it.</p>
@@ -203,7 +229,7 @@
                 <li>Post offensive, discriminatory, or hate-based content</li>
                 <li>Use copyrighted material without permission or upload content you do not have the right to upload
                 </li>
-                <li>Upload photos with visible license plates or faces</li>
+                <li>Upload photos with visible license plates or faces (unless they are properly blurred)</li>
                 <li>Take photos on private property without permission</li>
                 <li>Impersonate any person or entity, or mislead others about your identity or affiliation</li>
                 <li>Use the App while driving or in dangerous situations</li>
@@ -224,15 +250,15 @@
             <p>We may remove cars that violate these Terms or don't meet our requirements. Content can be removed if
                 administrators see violations or if users report it. Accounts that repeatedly violate these Terms may be
                 suspended or terminated.</p>
-            <p>You can report content through the in-app reporting feature. If you believe content was removed in error,
-                you may appeal by emailing <a href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a> with "Content
-                Appeal" in the subject line.</p>
+            <p>If administrators delete your content for policy violations, we will notify you via an in-app
+                notification.</p>
+            <p>You can report content through the in-app reporting feature.</p>
 
-            <h2>6A. Copyright and Takedown Complaints (DMCA)</h2>
+            <h2>6A. Copyright Complaints</h2>
             <p>If you believe someone uploaded content that infringes your copyright, trademark, or other intellectual
-                property rights, you may submit a DMCA takedown notice by emailing us at <a
-                    href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a> with "DMCA Takedown Request" or "Copyright
-                Complaint" in the subject line.</p>
+                property rights, you may submit a copyright complaint by emailing us at <a
+                    href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a> with "Copyright Complaint" in the subject
+                line.</p>
 
             <p>Your notice must include: (1) your contact information (name, address, phone, email), (2) identification
                 of the copyrighted work claimed to be infringed, (3) identification of the infringing material (link or
@@ -254,16 +280,19 @@
                 endorsed by any vehicle manufacturer.</p>
             <p>Any logos or trademarks visible in uploaded photos are incidental and part of user-generated content. If
                 you are a rights holder and believe your intellectual property is being misused within the App, you may
-                submit a DMCA takedown request (see Section 6A) or contact us at <a
+                submit a copyright complaint (see Section 6A) or contact us at <a
                     href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a>.</p>
 
-            <h2>9. Third-Party Services</h2>
+            <h2>9. User Feedback</h2>
+            <p>Any feedback, suggestions, or ideas you submit to AutoSpotterX are provided voluntarily and may be used by us for any purpose, without compensation or obligation to you.</p>
+
+            <h2>10. Third-Party Services</h2>
             <p>The App uses third-party services (cloud storage, AI, etc.) that have their own terms. We're not
                 responsible for their availability, accuracy, security, or failures.</p>
 
             <p>The App may link to external websites—we don't control those sites.</p>
 
-            <h2>10. Service Availability and Modifications</h2>
+            <h2>11. Service Availability and Modifications</h2>
             <p>We do our best to keep the App running smoothly, but we can't guarantee it'll be available 24/7 or
                 completely error-free. We may need to update, modify, or temporarily suspend features for maintenance or
                 improvements.</p>
@@ -272,34 +301,38 @@
                 to the Terms, we'll update the "Last Updated" date and notify you through the App or email. Continuing
                 to use the App after changes means you accept them.</p>
 
-            <h2>11. Disclaimers</h2>
+            <h2>12. Disclaimers</h2>
             <p>The App is provided "as is" and "as available" without warranties of any kind, either express or
                 implied, including but not limited to warranties of merchantability, fitness for a particular purpose,
                 or non-infringement.</p>
 
-            <p>We do not guarantee that the App will be error-free or continuously available . We are not responsible for the accuracy of user-generated content, third-party services, or AI
+            <p>We do not guarantee that the App will be error-free or continuously available . We are not responsible
+                for the accuracy of user-generated content, third-party services, or AI
                 results.</p>
 
             <p>AI identification is provided for informational purposes only. Please don't rely on AI results for
                 legal, financial, or safety-related decisions.</p>
 
-            <p>Vehicle details and car specifications in the App may be incorrect, incomplete, or outdated. AutoSpotterX
-                does not guarantee the accuracy of any vehicle data (including user-submitted or AI/database-generated
-                information) and is not responsible for problems caused by inaccurate or missing data. You should always
-                verify car information yourself before relying on it.</p>
+            <p><strong>Car Specifications:</strong> The App includes AI-generated vehicle specifications (horsepower,
+                engine, transmission, acceleration, price, etc.) for informational purposes only. This data may be
+                incorrect, incomplete, or outdated. Specifications vary by year, trim, and region. We do not guarantee
+                accuracy and are not liable for reliance on this data. Always verify specifications from official
+                sources before making decisions.</p>
 
-            <h2>12. Limitation of Liability</h2>
+            <h2>13. Limitation of Liability</h2>
             <p>To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental,
                 consequential, special, or punitive damages arising from your use of the App, including but not limited
                 to: data loss, business interruption, lost profits, service interruptions, user content issues, AI
                 errors, or third-party service failures.</p>
 
+            <p>This limitation does not apply to liability that cannot be excluded by law, including liability for death
+                or personal injury caused by negligence, fraud, or fraudulent misrepresentation.</p>
+
             <p>AutoSpotterX is not liable for any user-generated content. Users may be held legally accountable for any
                 content they upload or share that violates these Terms or applicable law.</p>
 
-            <p>Some jurisdictions don't allow certain liability limitations, so some of these may not apply to you.</p>
 
-            <h2>13. Your Responsibilities</h2>
+            <h2>14. Your Responsibilities</h2>
             <p>You agree to take responsibility for your use of the App, including:</p>
             <ul>
                 <li>Any content you upload or share</li>
@@ -308,46 +341,33 @@
                 <li>Any activities conducted through your account</li>
             </ul>
 
-            <h2>14. Indemnification</h2>
-            </p>
-            <p>You agree to defend, indemnify, and hold harmless AutoSpotterX, its developer, and team from any
-                claims, damages, losses, liabilities, and expenses (including legal fees) arising from:</p>
-            <ul>
-                <li>Your use of the App</li>
-                <li>Content you upload or share</li>
-                <li>Your violation of these Terms</li>
-                <li>Your violation of any third-party rights (copyright, privacy, etc.)</li>
-                <li>Any harm caused to others through your actions</li>
-            </ul>
-            <p>We reserve the right to control the defense of any claim, and you agree not to settle any claim without
-                our written consent.</p>
+            <h2>15. Indemnification</h2>
+            <p>To the extent permitted by law, you agree to indemnify and hold harmless AutoSpotterX from any claims or
+                legal costs arising specifically from your breach of these Terms, your violation of any laws, or your
+                infringement of third-party rights (such as copyright).</p>
 
-            <h2>15. Dispute Resolution and Claims Deadline</h2>
-            <p>Any claim related to AutoSpotterX must be filed within 3 months of when it arose. After this period,
-                claims are permanently barred.</p>
-            <p>Before filing legal action, please contact us at <a
-                    href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a> to resolve issues informally. Disputes will
-                be handled in Tel Aviv, Israel courts as stated in Section 17.</p>
-
-            <h2>16. Class Action Waiver</h2>
-            <p>Disputes must be brought individually. You waive any right to participate in class action lawsuits or
-                class-wide arbitration. You may not join your claims with other users.</p>
-
-            <h2>17. Governing Law</h2>
-            <p>These Terms are governed by Israeli law. Any legal disputes will be handled in the courts of Tel Aviv,
+            <h2>16. Governing Law and Dispute Resolution</h2>
+            <p>These Terms are governed by Israeli law. Before filing legal action, you agree to contact us at <a
+                    href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com </a> to resolve issues informally. Any legal
+                disputes that cannot be resolved informally will be handled exclusively in the courts of Tel Aviv,
                 Israel.</p>
+
+            <h2>17. Class Action Waiver</h2>
+            <p>Disputes will be resolved individually to the extent permitted by law.</p>
+
 
             <h2>18. Other Important Stuff</h2>
             <p>These Terms and our Privacy Policy are the complete agreement. If part of it can't be enforced, the rest
                 still counts.</p>
 
 
-            <p>We'll notify you of updates via email or in-app. Contact us at <a
+            <p>We'll notify you of updates via in-app. Contact us at <a
                     href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a>.</p>
 
             <h2>19. Account Deletion and Termination</h2>
-            <p>You may delete your account through app settings (immediate) or by emailing us at <a
-                    href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a> with "Account Deletion" in the subject line
+            <p>You may delete your account through app settings (deleted promptly (typically within minutes)) or by
+                emailing us at <a href="mailto:zernoxi6@gmail.com">zernoxi6@gmail.com</a> with "Account Deletion" in the
+                subject line
                 (within 7 working days). Deletion is permanent and cannot be undone.</p>
 
             <p>We may suspend or terminate your account at any time if you violate these Terms or for any other reason.
