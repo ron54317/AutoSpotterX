@@ -75,6 +75,7 @@
             font-size: 1.4rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             color: var(--primary);
         }
@@ -122,6 +123,15 @@
             font-size: 1.8rem;
             border-bottom: 1px solid #222;
             padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
         }
 
         .content {
@@ -207,21 +217,26 @@
                 Service and Privacy Policy (including the current version). Your email address is used only for
                 authentication.</p>
 
-            <p><strong>User Content:</strong> User-generated content such as vehicle photos (including optional
-                secondary photos and videos stored locally on your device), car details you add (for
-                example make/model and captions/notes), timestamps, country name/code (derived from location), your
-                privacy/sharing settings (for the public feed and Country Spots), social interactions (likes and
-                friend connections/requests), in-app notifications related to those interactions, reports you
-                submit for moderation, and AI service usage counts (to enforce rate limits). We may extract and analyze
-                photo metadata (EXIF) including location, camera information, and timestamps for originality detection
-                (performed on-device), to save precise location locally on your device, and to derive country
-                information for our servers. Car photos uploaded to our servers are processed on-device before upload
-                (including watermarking and privacy blurring where available, as well as any manual blurring you apply).
-                We do not intentionally upload an original unprocessed photo when a processed version is available. We
-                store low-quality photo versions in Firebase; if you choose to share
-                publicly (and the spot is eligible and not hidden), a high-quality version may also be stored on
-                Cloudinary for public display. Secondary photos and videos remain on your device only and are never
-                uploaded to our servers.</p>
+            <p><strong>User Content:</strong> We collect the following user-generated content:</p>
+            <ul>
+                <li><strong>Photos & Videos:</strong> Main vehicle photos (uploaded to our servers). Secondary photos
+                    and videos are stored only on your device and never uploaded.</li>
+                <li><strong>Car Details:</strong> Make/model, captions/notes, timestamps, and country name/code (derived
+                    from location).</li>
+                <li><strong>Privacy Settings:</strong> Your sharing preferences for the public feed and Country Spots.
+                </li>
+                <li><strong>Social Interactions:</strong> Likes, friend connections/requests, and in-app notifications.
+                </li>
+                <li><strong>Moderation:</strong> Reports you submit for content moderation.</li>
+                <li><strong>AI Usage:</strong> Service usage counts to enforce rate limits.</li>
+                <li><strong>Photo Metadata:</strong> We analyze EXIF data (location, camera info, timestamps) locally on
+                    your device for originality detection. Precise location stays on your device only. We only collect
+                    country name/code for our servers.</li>
+                <li><strong>Photo Processing:</strong> Car photos are processed on-device before upload (watermarking,
+                    privacy blurring, manual blurring). We upload only processed versions, not originals. Low-quality
+                    versions are stored in Firebase; high-quality versions may be stored on Cloudinary for public
+                    sharing (if eligible and not hidden). Secondary photos and videos never leave your device.</li>
+            </ul>
 
 
             <p><strong>Device & Usage Data:</strong> Technical data from your device, such as device model and operating
@@ -248,7 +263,7 @@
                 <li><strong>Google Play In-App Updates:</strong> Used to check for and notify users of app updates. (<a
                         href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>)</li>
                 <li><strong>Android Geocoder (device geocoding service):</strong> Used to derive country name/code from
-                    coordinates (see Section 5.1). Only country info is stored in our database.</li>
+                    coordinates (see Section 5.4). Only country info is stored in our database.</li>
                 <li><strong>Cloudinary:</strong> High-quality photos used in the public feed are stored on Cloudinary.
                     (<a href="https://cloudinary.com/privacy" target="_blank">Privacy Policy</a>)</li>
                 <li><strong>MapTiler:</strong> Map tiles (no access to your location data). (<a
@@ -259,55 +274,39 @@
             <h2>4. How We Use Your Information</h2>
             <p>We use your information to:</p>
             <ul>
-                <li><strong>Account Management:</strong> Create and maintain your account and profile.</li>
-                <li><strong>Support and App Maintenance:</strong> Provide support, troubleshoot issues, and help keep
-                    the app up to date (for example, through in-app update and in-app review prompts).</li>
-                <li><strong>Feature Functionality:</strong> Process photos on your device (privacy blurring including
-                    manual blurring, originality
-                    detection, and automatic watermarking with app branding), manage your car collection, and store
-                    spotting data. Privacy blurring, originality detection, and watermarking are all performed
-                    on-device. Originality detection analyzes photo
-                    metadata (EXIF) to help identify screenshots/downloads, and non-original photos may be
-                    restricted from public sharing in the public feed and Country Spots. Cars are automatically
-                    classified by rarity (based on make/model) to determine feed and Country Spots eligibility and XP
-                    rewards. Display AI-generated vehicle specifications and pricing estimates (converted to your
-                    preferred currency) for informational purposes.</li>
-                <li><strong>Rarity & Statistics:</strong> Classify cars by rarity and calculate personal spotting
-                    statistics (such as total spots and rarity breakdown) locally on your device, using the cars loaded
-                    in your account.</li>
-                <li><strong>Social Features:</strong> Enable friends, likes, and community sharing features (including
-                    the public feed and Country Spots).</li>
-                <li><strong>Notifications:</strong> Send in-app notifications for interactions such as likes, friend
-                    requests, moderation actions, and system updates.</li>
-                <li><strong>Content Moderation:</strong> Review reported content and enforce our Terms of Service,
-                    including removing non-compliant content from our servers (Firestore and Cloudinary) and notifying
-                    users when content is removed.</li>
-                <li><strong>Engagement Features:</strong> Support in-app features such as XP points, rank badges, and
-                    leaderboards (which display username, profile photo, and AutoXP points, and allow users to send
-                    friend requests).</li>
-                <li><strong>AI Services:</strong> Provide optional car identification via Google Gemini.</li>
-                <li><strong>Privacy Controls:</strong> Respect your privacy preferences including your choice to hide
-                    cars from the public feed and Country Spots, and your location attachment preferences (see Section
-                    5.1).</li>
-                <li><strong>Mapping:</strong> Provide mapping features as described in Section 5.1. Precise location
-                    saved on your device is used to display your private map showing where you spotted cars. We store
-                    country information on our servers to display the country in the feed and to power the Country Spots
-                    screen.</li>
-                <li><strong>App Improvement:</strong> Improve app features and content based on aggregated/anonymous
-                    usage and vehicle data(car brand/model).</li>
+                <li><strong>Account & Features:</strong> Create and authenticate your account (via email/password or
+                    Google sign-in), manage your car collection, calculate stats and XP, and provide AI-powered car
+                    identification (with usage tracking to enforce rate limits).</li>
+                <li><strong>Social Features:</strong> Enable friends, public feed sharing, Country Spots, likes, and
+                    notifications.</li>
+                <li><strong>Privacy & Control:</strong> Respect your privacy settings, including hiding cars from the
+                    public feed and Country Spots, and controlling location attachment.</li>
+                <li><strong>Maps & Location:</strong> Display your private map with spot locations (stored only on your
+                    device; only you have access to exact locations). Country names are stored on our servers to display
+                    the country in the public feed and to organize entries in the Country Spots section.</li>
+                <li><strong>Photo Processing:</strong> Process photos on your device (watermarking and privacy blurring)
+                    before upload to protect privacy. Store low-quality versions in Firebase for your collection; store
+                    high-quality versions on Cloudinary for public feed display (when shared publicly). Secondary photos
+                    and videos remain on your device only for your personal reference.</li>
+                <li><strong>Support & Safety:</strong> Provide app updates, troubleshoot issues, moderate reported
+                    content, and enforce our Terms of Service.</li>
+                <li><strong>Compliance & Legal:</strong> Track your acceptance of our Terms of Service and Privacy
+                    Policy (including version numbers) to ensure legal compliance.</li>
+                <li><strong>Improvement:</strong> Analyze anonymized usage patterns to make the app better.</li>
             </ul>
 
             <h2>5. Data Sharing</h2>
+            <p>We share specific data in limited scenarios as described below:</p>
 
-            <p><strong>Service Providers:</strong> We engage third-party service providers to facilitate our services.
-                These include:</p>
+            <h3>5.1 Service Providers</h3>
+            <p>We engage third-party service providers to facilitate our services:</p>
             <ul>
                 <li><strong>Firebase (Google):</strong> For user authentication, database storage, and backend services.
                     We share username, profile data (profile photo, AutoXP points, account creation date), car
                     collection data, and app usage data. Email is stored in Firebase Authentication only for login
                     purposes and is not shared with our Firestore database or other users.</li>
-                <li><strong>Cloudinary:</strong> For high-quality photo storage and delivery in the public feed and
-                    Country Spots. We share high-quality versions of uploaded vehicle photos for public display.</li>
+                <li><strong>Cloudinary:</strong> For high-quality photo storage and delivery in the public feed. We
+                    share high-quality versions of uploaded vehicle photos for public display.</li>
                 <li><strong>Google Services (ML Kit, Gemini API) and Android Geocoder:</strong> For on-device
                     processing, optional AI identification, and country derivation via device geocoding. Data shared is
                     limited to what is necessary for each service (see Section 3 for details).</li>
@@ -315,38 +314,40 @@
                     MapTiler, only anonymous map tile requests.</li>
             </ul>
 
+            <h3>5.2 Public & Social Features</h3>
+            <p>Information shared with other users through the app's social features:</p>
             <ul>
-                <li><strong>Law and Safety:</strong> We may disclose your information if required by law or to protect
-                    our rights, safety, or property.</li>
-                <li><strong>Friends:</strong> Friends can see all cars in your collection (car photos and make/model)
-                    but not exact locations. User IDs are internal only.</li>
-                <li><strong>Public Feed:</strong> If you haven't enabled "Don't Upload to Feed & Country Spots,"
-                    eligible spots (RARE+ rarity, original, not individually hidden) are uploaded to the public feed
-                    with a high-quality photo saved to Cloudinary. The feed may display: car photos, user profile
-                    photos, usernames, car names, likes count, rank badge, country, timestamp, and caption/notes (if
-                    provided). All photos are processed on-device (watermarking and best-effort license plate/face
-                    blurring, including any manual blurring) before upload. You can hide individual spots. Content
-                    shared publicly may be used for promotional purposes. You can opt out by disabling public sharing
-                    ("Don't Upload to Feed & Country Spots") or hiding individual spots. Exact location is never shared,
-                    only country (see Section 5.1).</li>
+                <li><strong>Public Feed:</strong> Eligible spots (RARE+ rarity, original) appear in the public feed
+                    unless you enable "Don't Upload to Feed & Country Spots" or hide individual spots. The feed
+                    displays: car photos, profile photos, usernames, car names, likes, rank badges, country, and
+                    optional captions. Content shared publicly may be used for promotional purposes. Exact location is
+                    never shared, only country (see Section 5.4).</li>
                 <li><strong>Country Spots:</strong> Users can browse RARE+ cars by country. Displays only car photos and
-                    car names—no username or profile info. Only country name shown, no exact location. Only RARE+ cars
+                    car names no username or profile info. Only country name shown, no exact location. Only RARE+ cars
                     not hidden from public sharing appear here.</li>
-                <li><strong>Like Notifications:</strong> When you like someone's car, they may receive an in-app
-                    notification showing your username and the car details (e.g., "[Your username] liked your Ferrari
-                    F40").</li>
+                <li><strong>Leaderboard:</strong> Public leaderboard shows top 50 users by AutoXP (username, AutoXP
+                    points, profile photo).</li>
+                <li><strong>Friends:</strong> Friends can see all cars in your collection (car photos and make/model)
+                    but not exact locations.</li>
                 <li><strong>Friend Requests:</strong> When you send a friend request (via feed or leaderboard), the
                     recipient can see your display name and profile photo in the Friends screen and may receive a
                     notification (e.g., "[Your username] sent you a friend request"). User IDs are internal only.</li>
-                <li><strong>Leaderboard:</strong> Public leaderboard shows top 50 users by AutoXP (username, AutoXP
-                    points, profile photo).</li>
+                <li><strong>Like Notifications:</strong> When you like someone's car, they may receive an in-app
+                    notification showing your username and the car details (e.g., "[Your username] liked your Ferrari
+                    F40").</li>
+            </ul>
+
+            <h3>5.3 Legal & Administrative</h3>
+            <ul>
                 <li><strong>Administrators:</strong> Administrators may access user data (photos, profile info, content)
                     for moderation and support. They can delete content that violates our Terms of Service. Deleted
                     content is permanently removed from our servers (Firestore and Cloudinary), and users are notified
                     via in-app notification.</li>
+                <li><strong>Law and Safety:</strong> We may disclose your information if required by law or to protect
+                    our rights, safety, or property.</li>
             </ul>
 
-            <h2>5.1 Map and Location Privacy</h2>
+            <h3>5.4 Map and Location Privacy</h3>
             <p>Your location privacy is fully protected:</p>
 
             <ul>
@@ -360,8 +361,9 @@
                     turned off at any time.</li>
                 <li><strong>Country Data Only:</strong> To enable Country Spots browsing and show which country a car
                     was
-                    spotted in, we extract country name/code from coordinates using Android Geocoder (device geocoding
-                    service). Only country name/code is stored on our servers—exact coordinates are not.
+                    spotted in inside the feed, we extract country name/code from coordinates using Android Geocoder
+                    (device geocoding
+                    service). Only country name/code is stored on our servers exact coordinates are not.
                 </li>
                 <li><strong>Completely Private:</strong> Only you can see exact locations on your personal map. Friends
                     can see your car photos/details but not locations or map markers.</li>
@@ -392,15 +394,6 @@
 
             <h2>8. Additional (Optional) Features</h2>
             <p>AutoSpotterX offers several optional features with extra privacy considerations:</p>
-
-            <p><strong>On-Device Detection:</strong> The app includes privacy blurring (for
-                license plates and faces) using Google ML Kit on your device. Automatic detection may not be perfect, so
-                you are responsible for reviewing your photos before uploading. The app also provides an on-device
-                manual blur tool so you can blur any additional areas if needed. All processing occurs locally, and
-                original images remain on your device. When you upload a spot, we upload only the processed version of
-                the image (after blurring and watermarking) to our servers (Firestore and, for public sharing,
-                Cloudinary), not the original.
-            </p>
 
             <p><strong>Local Video Storage:</strong> If you record car videos within the app, they are stored only on
                 your device in encrypted form. These videos are designed to remain on your device and are not uploaded
@@ -444,6 +437,12 @@
                 Third-party servers are used for authentication, data storage, and optional AI identification if you
                 opt in.</p>
 
+            <p><strong>Originality Detection:</strong> During photo upload, we analyze photo metadata (EXIF data
+                including camera information, GPS data, and timestamps) locally on your device to detect screenshots or
+                downloaded images. This helps prevent non-original photos from appearing in the public feed and Country
+                Spots. Photos flagged as non-original are still added to your car collection and visible to friends, but
+                are automatically hidden from public sharing. If administrators later identify a photo as non-original,
+                it may be deleted from our servers.</p>
 
             <h2>11. Data Protection and International Transfers</h2>
             <p><strong>Data Protection:</strong> We implement appropriate technical and organizational measures to
