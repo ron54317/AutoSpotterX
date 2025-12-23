@@ -13,6 +13,12 @@
             --accent: #03DAC5;
         }
 
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
@@ -20,12 +26,16 @@
             padding: 0;
             color: #ffffff;
             background-color: #050408;
+            overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
+            width: 100%;
         }
 
         header {
@@ -33,27 +43,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: rgba(30, 30, 30, 0.7);
+            background: rgba(30, 30, 30, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 100;
-            /* Super-smooth fading blur */
-            -webkit-mask-image: linear-gradient(to bottom,
-                    black 0%,
-                    black 50%,
-                    rgba(0, 0, 0, 0.9) 65%,
-                    rgba(0, 0, 0, 0.6) 80%,
-                    rgba(0, 0, 0, 0.3) 90%,
-                    transparent 100%);
-            mask-image: linear-gradient(to bottom,
-                    black 0%,
-                    black 50%,
-                    rgba(0, 0, 0, 0.9) 65%,
-                    rgba(0, 0, 0, 0.6) 80%,
-                    rgba(0, 0, 0, 0.3) 90%,
-                    transparent 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo-container {
@@ -151,9 +147,6 @@
                 flex-direction: row;
                 justify-content: space-between;
                 gap: 0.4rem;
-                /* Reset mask for mobile to avoid cutoff issues */
-                -webkit-mask-image: none;
-                mask-image: none;
             }
 
             .nav-links {
@@ -179,6 +172,14 @@
             h2 {
                 font-size: 1.5rem;
                 margin-top: 30px;
+            }
+
+            .container {
+                padding: 20px 16px;
+            }
+
+            body {
+                font-size: 16px;
             }
         }
     </style>
@@ -301,10 +302,10 @@
             <h3>5.1 Service Providers</h3>
             <p>We engage third-party service providers to facilitate our services:</p>
             <ul>
-                <li><strong>Firebase (Google):</strong> For user authentication, database storage, and backend services.
-                    We share username, profile data (profile photo, AutoXP points, account creation date), car
-                    collection data, and app usage data. Email is stored in Firebase Authentication only for login
-                    purposes and is not shared with our Firestore database or other users.</li>
+                <li><strong>Firebase (Google):</strong>For user authentication, database storage, and backend services.
+                    As our primary backend, Firebase stores all app data described in Section 2, except for GPS
+                    coordinates and secondary photos/videos which remain on your device only. Email is stored in
+                    Firebase Authentication only for login purposes.</li>
                 <li><strong>Cloudinary:</strong> For high-quality photo storage and delivery in the public feed. We
                     share high-quality versions of uploaded vehicle photos for public display.</li>
                 <li><strong>Google Services (ML Kit, Gemini API) and Android Geocoder:</strong> For on-device

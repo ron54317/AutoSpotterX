@@ -13,6 +13,12 @@
             --accent: #03DAC5;
         }
 
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
@@ -20,12 +26,16 @@
             padding: 0;
             color: #ffffff;
             background-color: #050408;
+            overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
+            width: 100%;
         }
 
         header {
@@ -33,27 +43,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: rgba(30, 30, 30, 0.7);
+            background: rgba(30, 30, 30, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 100;
-            /* Super-smooth fading blur */
-            -webkit-mask-image: linear-gradient(to bottom,
-                    black 0%,
-                    black 50%,
-                    rgba(0, 0, 0, 0.9) 65%,
-                    rgba(0, 0, 0, 0.6) 80%,
-                    rgba(0, 0, 0, 0.3) 90%,
-                    transparent 100%);
-            mask-image: linear-gradient(to bottom,
-                    black 0%,
-                    black 50%,
-                    rgba(0, 0, 0, 0.9) 65%,
-                    rgba(0, 0, 0, 0.6) 80%,
-                    rgba(0, 0, 0, 0.3) 90%,
-                    transparent 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo-container {
@@ -142,9 +138,6 @@
                 flex-direction: row;
                 justify-content: space-between;
                 gap: 0.4rem;
-                /* Reset mask for mobile to avoid cutoff issues */
-                -webkit-mask-image: none;
-                mask-image: none;
             }
 
             .nav-links {
@@ -170,6 +163,14 @@
             h2 {
                 font-size: 1.5rem;
                 margin-top: 30px;
+            }
+
+            .container {
+                padding: 20px 16px;
+            }
+
+            body {
+                font-size: 16px;
             }
         }
     </style>
@@ -339,8 +340,10 @@
                 by us for any purpose, without compensation or obligation to you.</p>
 
             <h2>10. Third-Party Services</h2>
-            <p>The App uses third-party services (cloud storage, AI, etc.) that have their own terms. We're not
-                responsible for their availability, accuracy, security, or failures.</p>
+            <p>The App uses third-party services including Firebase (Google), Cloudinary, Google AI, and mapping
+                services. These services have their own terms and privacy policies. See our <a
+                    href="privacy.html">Privacy Policy</a> for full details. We're not responsible for their
+                availability, accuracy, security, or failures.</p>
 
             <p>The App may link to external websites we don't control those sites.</p>
 
@@ -399,7 +402,12 @@
             </ul>
 
             <h2>15. Indemnification</h2>
-            <p>Indemnification: You agree to indemnify, defend, and hold harmless AutoSpotterX and its developer from and against any and all reasonable third-party claims, damages, liabilities, and costs (including reasonable attorneys' fees) arising from: (1) your intentional or negligent content uploads; (2) your material breach of these Terms; (3) your violation of applicable laws or third-party rights; or (4) your misuse of the App. This obligation does not apply to the extent a claim is caused by our own gross negligence or willful misconduct. We will provide you with prompt notice of any such claim.</p>
+            <p>Indemnification: You agree to indemnify, defend, and hold harmless AutoSpotterX and its developer from
+                and against any and all reasonable third-party claims, damages, liabilities, and costs (including
+                reasonable attorneys' fees) arising from: (1) your intentional or negligent content uploads; (2) your
+                material breach of these Terms; (3) your violation of applicable laws or third-party rights; or (4) your
+                misuse of the App. This obligation does not apply to the extent a claim is caused by our own gross
+                negligence or willful misconduct. We will provide you with prompt notice of any such claim.</p>
 
             <h2>16. Governing Law and Dispute Resolution</h2>
             <p>These Terms are governed by Israeli law. Before filing legal action, you agree to contact us at <a
