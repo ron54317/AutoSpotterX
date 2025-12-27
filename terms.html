@@ -271,12 +271,19 @@
                 automatic detection may not be perfect. You are responsible for reviewing your photos before uploading
                 and using the in-app Blur tool to blur any remaining sensitive information.</p>
 
-            <p><strong>Content Visibility:</strong> Common cars are not accepted. Uncommon cars are stored privately.
-                Only RARE+ cars can appear in the feed and country spots if your privacy settings allow it.</p>
+            <p><strong>Content Visibility:</strong> Upload behavior depends on photo originality and car rarity.
+                Non-original photos (screenshots, downloads) and common cars are saved locally only on your device
+                (encrypted, never uploaded).
+                Original uncommon cars upload to Firebase only (hidden from feed, visible to friends).
+                Original rare+ cars upload to Firebase and Cloudinary (visible in feed and Country Spots unless hidden
+                via privacy settings).</p>
 
-            <p><strong>Originality Detection:</strong> We use metadata to detect non-original photos. If detected, they
-                won't appear in the feed or country spots but will be stored in your private collection. We may delete
-                photos determined to be not original.</p>
+            <p><strong>Originality Detection:</strong> We analyze photo metadata (EXIF data) locally on your device to
+                detect
+                non-original photos. Non-original photos are automatically saved locally only on your device in
+                encrypted storage
+                and never uploaded to any server. They remain in your private collection but are not shared.
+                Administrators may delete content identified as non-original from uploaded spots.</p>
 
             <h2>5. Prohibited Conduct</h2>
             <p>To keep AutoSpotterX safe and fair for everyone, please don't:</p>
