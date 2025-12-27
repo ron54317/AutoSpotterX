@@ -231,8 +231,14 @@
 
             <p><strong>User Content:</strong> We collect the following user-generated content:</p>
             <ul>
-                <li><strong>Photos & Videos:</strong> Main vehicle photos (uploaded to our servers). Secondary photos
-                    and videos are stored only on your device and never uploaded.</li>
+                <li><strong>Photos & Videos:</strong> Vehicle photo upload depends on originality and rarity.
+                    Non-original
+                    photos (screenshots, downloads) and common cars are saved only on your device (encrypted, never
+                    uploaded).
+                    Original uncommon cars upload to Firebase only (hidden from feed). Original rare+ cars upload to
+                    Firebase
+                    and Cloudinary (visible in feed unless hidden). Secondary photos and videos never leave your device.
+                </li>
                 <li><strong>Car Details:</strong> Make/model, captions/notes, timestamps, and country name/code (derived
                     from location).</li>
                 <li><strong>Privacy Settings:</strong> Your sharing preferences for the public feed and Country Spots.
@@ -241,13 +247,17 @@
                 </li>
                 <li><strong>Moderation:</strong> Reports you submit for content moderation.</li>
                 <li><strong>AI Usage:</strong> Service usage counts to enforce rate limits.</li>
-                <li><strong>Photo Metadata:</strong> We analyze EXIF data (location, camera info, timestamps) locally on
-                    your device for originality detection. Precise location stays on your device only. We only collect
-                    country name/code for our servers.</li>
-                <li><strong>Photo Processing:</strong> Car photos are processed on-device before upload (watermarking,
-                    privacy blurring, manual blurring). We upload only processed versions, not originals. Low-quality
-                    versions are stored in Firebase; high-quality versions may be stored on Cloudinary for public
-                    sharing (if eligible and not hidden). Secondary photos and videos never leave your device.</li>
+                <li><strong>Photo Metadata:</strong> We analyze EXIF data (location, camera info, timestamps, editing
+                    software) locally on
+                    your device for originality detection. Non-original photos are automatically saved locally only.
+                    Precise location
+                    stays on your device only. We only collect country name/code for uploaded cars.</li>
+                <li><strong>Photo Processing:</strong> Car photos are processed on-device (watermarking,
+                    privacy blurring, manual blurring) before upload decision. We upload only processed versions.
+                    Low-quality
+                    versions stored in Firebase (uncommon+); high-quality versions stored on Cloudinary only for rare+
+                    cars
+                    shared publicly. Secondary photos and videos never leave your device.</li>
             </ul>
 
 
@@ -276,7 +286,10 @@
                         href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>)</li>
                 <li><strong>Android Geocoder (device geocoding service):</strong> Used to derive country name/code from
                     coordinates (see Section 5.4). Only country info is stored in our database.</li>
-                <li><strong>Cloudinary:</strong> High-quality photos used in the public feed are stored on Cloudinary.
+                <li><strong>Cloudinary:</strong> High-quality photos of original rare+ cars (not hidden) are stored on
+                    Cloudinary
+                    for public feed and Country Spots. Non-original photos, common cars, and hidden photos are never
+                    uploaded to Cloudinary.
                     (<a href="https://cloudinary.com/privacy" target="_blank">Privacy Policy</a>)</li>
                 <li><strong>MapTiler:</strong> Map tiles (no access to your location data). (<a
                         href="https://www.maptiler.com/privacy-policy/" target="_blank">Privacy Policy</a>)</li>
@@ -296,10 +309,11 @@
                 <li><strong>Maps & Location:</strong> Display your private map with spot locations (stored only on your
                     device; only you have access to exact locations). Country names are stored on our servers to display
                     the country in the public feed and to organize entries in the Country Spots section.</li>
-                <li><strong>Photo Processing:</strong> Process photos on your device (watermarking and privacy blurring)
-                    before upload to protect privacy. Store low-quality versions in Firebase for your collection; store
-                    high-quality versions on Cloudinary for public feed display (when shared publicly). Secondary photos
-                    and videos remain on your device only for your personal reference.</li>
+                <li><strong>Photo Processing & Upload:</strong> Process photos on your device (EXIF analysis,
+                    watermarking, privacy blurring). Non-original and common cars saved locally only, never uploaded.
+                    Original uncommon cars upload to Firebase only (hidden from feed). Original rare+ cars upload to
+                    Firebase and Cloudinary (for public display unless hidden). Secondary photos and videos remain
+                    on your device only.</li>
                 <li><strong>Support & Safety:</strong> Provide app updates, troubleshoot issues, moderate reported
                     content, and enforce our Terms of Service.</li>
                 <li><strong>Compliance & Legal:</strong> Track your acceptance of our Terms of Service and Privacy
@@ -317,8 +331,10 @@
                     As our primary backend, Firebase stores all app data described in Section 2, except for GPS
                     coordinates and secondary photos/videos which remain on your device only. Email is stored in
                     Firebase Authentication only for login purposes.</li>
-                <li><strong>Cloudinary:</strong> For high-quality photo storage and delivery in the public feed. We
-                    share high-quality versions of uploaded vehicle photos for public display.</li>
+                <li><strong>Cloudinary:</strong> For high-quality photo storage and delivery in the public feed and
+                    Country Spots. We only upload high-quality versions of original rare+ cars not hidden from public
+                    sharing. Non-original photos, common cars, uncommon cars, and hidden cars are never uploaded to
+                    Cloudinary.</li>
                 <li><strong>Google Services (ML Kit, Gemini API) and Android Geocoder:</strong> For on-device
                     processing, optional AI identification, and country derivation via device geocoding. Data shared is
                     limited to what is necessary for each service (see Section 3 for details).</li>
@@ -329,14 +345,16 @@
             <h3>5.2 Public & Social Features</h3>
             <p>Information shared with other users through the app's social features:</p>
             <ul>
-                <li><strong>Public Feed:</strong> Eligible spots (RARE+ rarity, original) appear in the public feed
-                    unless you enable "Don't Upload to Feed & Country Spots" or hide individual spots. The feed
-                    displays: car photos, profile photos, usernames, car names, likes, rank badges, country, and
-                    optional captions. Content shared publicly may be used for promotional purposes. Exact location is
-                    never shared, only country (see Section 5.4).</li>
-                <li><strong>Country Spots:</strong> Users can browse RARE+ cars by country. Displays only car photos and
-                    car names no username or profile info. Only country name shown, no exact location. Only RARE+ cars
-                    not hidden from public sharing appear here.</li>
+                <li><strong>Public Feed:</strong> Only original rare+ cars appear in the public feed, unless you enable
+                    "Don't Upload to Feed & Country Spots" or hide individual spots. Non-original photos, common cars,
+                    and uncommon cars are automatically excluded (saved locally only or hidden). The feed displays: car
+                    photos, profile photos, usernames, car names, likes, rank badges, country, and optional captions.
+                    Content shared publicly may be used for promotional purposes. Exact location is never shared, only
+                    country (see Section 5.4).</li>
+                <li><strong>Country Spots:</strong> Users can browse rare+ cars by country. Only original rare+ cars
+                    not hidden from public sharing appear here. Non-original photos, common cars, and uncommon cars are
+                    automatically excluded. Displays only car photos and car names - no username or profile info. Only
+                    country name shown, no exact location.</li>
                 <li><strong>Leaderboard:</strong> Public leaderboard shows top 50 users by AutoXP (username, AutoXP
                     points, profile photo).</li>
                 <li><strong>Friends:</strong> Friends can see all cars in your collection (car photos and make/model)
@@ -451,10 +469,17 @@
 
             <p><strong>Originality Detection:</strong> During photo upload, we analyze photo metadata (EXIF data
                 including camera information, GPS data, and timestamps) locally on your device to detect screenshots or
-                downloaded images. This helps prevent non-original photos from appearing in the public feed and Country
-                Spots. Photos flagged as non-original are still added to your car collection and visible to friends, but
-                are automatically hidden from public sharing. If administrators later identify a photo as non-original,
-                it may be deleted from our servers.</p>
+                downloaded images. Non-original photos are saved only on your device in encrypted storage and never
+                uploaded
+                to any server. They remain visible in your car collection but are not shared with anyone.</p>
+
+            <p><strong>Rarity-Based Upload:</strong> Car rarity determines upload behavior. Common cars (original or
+                not)
+                are saved locally only and never uploaded. Original uncommon cars upload to Firebase only (hidden from
+                feed,
+                visible to friends). Original rare+ cars upload to Firebase and Cloudinary (visible in feed/Country
+                Spots
+                unless hidden via settings).</p>
 
             <h2>11. Data Protection and International Transfers</h2>
             <p><strong>Data Protection:</strong> We implement appropriate technical and organizational measures to
@@ -510,7 +535,7 @@
                 appropriate, provide a notice in the app. Continuing to use AutoSpotterX after changes are posted
                 constitutes your acceptance of the updated Privacy Policy.</p>
 
-            <p><em>Last Updated: December 23, 2025</em></p>
+            <p><em>Last Updated: December 24, 2025</em></p>
         </div>
     </div>
 </body>
